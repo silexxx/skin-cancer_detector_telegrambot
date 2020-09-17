@@ -55,13 +55,13 @@ def search(bot, update):
         b=float(l.strip("tensor""()"))
         if b>=0.9:
             update.message.reply_text('`'+str(cat)+'`',parse_mode=ParseMode.MARKDOWN,reply_to_message_id=update.message.message_id)
-            print("prediction :")   
-            print(cat)
+#             print("prediction :")   
+#             print(cat)
         else:
             cat="sry I am not sure "
             update.message.reply_text('`'+str(cat)+'`',parse_mode=ParseMode.MARKDOWN,reply_to_message_id=update.message.message_id)
-            print("prediction :")
-            print("Not Sure")
+#             print("prediction :")
+#             print("Not Sure")
 
     except Exception as e:
         update.message.reply_text(e)
