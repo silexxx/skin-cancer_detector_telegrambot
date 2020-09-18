@@ -2,4 +2,4 @@ telegram==0.0.1
 python-telegram-bot
 https://download.pytorch.org/whl/cpu/torch-1.6.0-cp37-cp37m-linux_x86_64.whl
 https://download.pytorch.org/whl/cpu/torchvision-0.7-cp37-cp37m-linux_x86_64.whl
-fastai
+fastai==1.0.61
