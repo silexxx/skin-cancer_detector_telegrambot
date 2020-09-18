@@ -1,1 +1,1 @@
-web: python3 skin_cancer.py
+web: python skin_cancer.py
