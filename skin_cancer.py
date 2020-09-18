@@ -15,6 +15,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 from telegram import Update, Bot, ParseMode
 import os
+PORT = int(os.environ.get('PORT', 5000))
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -72,7 +73,9 @@ def error(bot, update, error):
 
 def main():
     """Start the bot."""
+    
     ocr_bot_token=os.environ.get("BOT_TOKEN", "")
+    TOKEN=ocr_bot_token
     updater = Updater(ocr_bot_token)
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start))
@@ -80,7 +83,11 @@ def main():
     # dp.add_handler(CommandHandler("contact", contact))
     dp.add_handler(MessageHandler(Filters.photo, search))
     dp.add_error_handler(error)
-    updater.start_polling()
+    updater.start_webhook(listen="0.0.0.0",
+                          port=int(PORT),
+                          url_path=TOKEN)
+    updater.bot.setWebhook('https://skin-cancer-detection-bot.herokuapp.com/' + TOKEN)
+#     updater.start_polling()
     updater.idle()
 
 
