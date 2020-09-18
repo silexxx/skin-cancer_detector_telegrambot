@@ -16,6 +16,7 @@ import logging
 from telegram import Update, Bot, ParseMode
 import os
 
+
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
@@ -55,13 +56,13 @@ def search(bot, update):
         b=float(l.strip("tensor""()"))
         if b>=0.9:
             update.message.reply_text('`'+str(cat)+'`',parse_mode=ParseMode.MARKDOWN,reply_to_message_id=update.message.message_id)
-            print("prediction :")   
-            print(cat)
+#             print("prediction :")   
+#             print(cat)
         else:
             cat="sry I am not sure "
             update.message.reply_text('`'+str(cat)+'`',parse_mode=ParseMode.MARKDOWN,reply_to_message_id=update.message.message_id)
-            print("prediction :")
-            print("Not Sure")
+#             print("prediction :")
+#             print("Not Sure")
 
     except Exception as e:
         update.message.reply_text(e)
@@ -73,7 +74,8 @@ def error(bot, update, error):
 def main():
     """Start the bot."""
     ocr_bot_token="1379744792:AAGwlnrcGy3a-E1m-9eYpdoPhVhrE_xAyKU"
-    #ocr_bot_token=os.environ.get("BOT_TOKEN", "")
+    # ocr_bot_token=os.environ.get("BOT_TOKEN", "")
+    TOKEN=ocr_bot_token
     updater = Updater(ocr_bot_token)
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start))
