@@ -1,1 +1,1 @@
-worker: python skin_cancer.py
+worker: python3 skin_cancer.py
