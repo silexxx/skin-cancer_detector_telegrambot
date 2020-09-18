@@ -1,5 +1,4 @@
 telegram==0.0.1
 python-telegram-bot
-https://download.pytorch.org/whl/cpu/torch-1.6.0-cp37-cp37m-linux_x86_64.whl
-https://download.pytorch.org/whl/cpu/torchvision-0.7-cp37-cp37m-linux_x86_64.whl
+pip install torch==1.6.0+cpu torchvision==0.7.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
 fastai==1.0.61
